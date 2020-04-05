@@ -13,5 +13,27 @@ module.exports = {
     filename: 'bundle.js',
     // 出力先のパス（絶対パスを指定する必要がある）
     path: path.join(__dirname, 'public/js')
+  },
+  module: {
+    rules: [
+      {
+        test : /\.css$/,
+        use : [
+          "style-loader",
+          "css-loader"
+        ]
+      },
+      {
+        test : /\.scss$/,
+        use : [
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
+      },{
+        test:/\.(jpge?g|png|gif|svg|ico)$/i,
+        loader:"url-loader",
+      }
+    ]
   }
 };
