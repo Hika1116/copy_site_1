@@ -18,7 +18,7 @@
 
 $header-con-color :rgb(1, 132, 137);
 $text-color : rgb(72, 72, 72);
-
+$text-input :#484848;
 $font-text-1: 0.9rem;
 
 
@@ -34,6 +34,7 @@ body {
     font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
     font-size: $font-text-1;
     font-weight: 600;
+    color: #484848;
 }
 
 //header
@@ -123,25 +124,25 @@ header {
     width: 100%;
     #top-header-area {
         width: 100%;
-        position: relative;
 
         #top-header-img {
             height: 650px;
             width: 100%;
             object-fit: cover;
             object-position:0 0;
+            position: relative;
         }
 
         #top-header-form {
-            display: flex;
-            flex-wrap: wrap;
+            @include putPrefix(display, flex);
+            @include putPrefix(flex-wrap, wrap);
             background-color: white;
             border-radius: 5px;
             position: absolute;
             top: 12%;
-            right: 6%;
+            right: 3%;
 
-            width: 28%;
+            width: 25%;
             padding: 30px;
 
             p {
@@ -205,7 +206,7 @@ header {
                 border:solid 0.5px #EBEBEB;
                 border-radius:10px;
                 background-color: white;
-                color: #484848;
+                color: $text-input;
                 font-weight: 200;
             }
             button {
@@ -263,6 +264,70 @@ header {
     /*下線の色*/
 }
 
+.first-explanation-are {
+    margin-top: 30px;
+    @include putPrefix(display, flex);
+    @include putPrefix(flex-wrap, wrap);
+    width: 620px;
+    margin: 0 auto;
+    >#first-explanation-header {
+        display: block;
+        width: 100%;
+        font-weight: 600;
+        font-size: 2.4rem;
+        text-align: center;
+    }
+    .hosting-explanation-contents {
+        width: 100%;
+        margin-bottom: 50px;
+        .check-icon-area {
+            height: 50px;
+            .check-icon{
+                padding-left:24px;
+                position:relative;
+            }
+            .check-icon:before,
+            .check-icon:after{
+                content:"";
+                display:block;
+                position:absolute;
+            }
+            .check-icon:before{
+                width:36px;
+                height:36px;
+                border-radius:50px;
+                background:#ffffff;
+                border:1px solid $text-color;
+                left:0;top:2px;
+            }
+            .check-icon:after{
+                border-left:3px solid $text-color;
+                border-bottom:3px solid $text-color;
+                width:12px;
+                height:5px;
+                -webkit-transform:rotate(-45deg);
+                transform:rotate(-45deg);
+                left:13px;
+                top:14px;
+            }
+       }
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size:0.9rem;
+        font-weight: 200;
+    }
+}
+
+
+
+
+
 // footer
 
 
@@ -282,6 +347,20 @@ header {
 }
 //画面横1024px-
 @media screen and (min-width:1024px) {
+    .main-wrapper {
+        #top-header-area {
+            #top-header-img {
+                display: block;;
+                width: 1600px;
+                margin: 0 auto;
+            }
+            #top-header-form {
+                top: 15%;
+                right: 13%;
+                width: 20%;
+            }
+        }
+    }
     .sub-header-area {
         display: flex;
         width: 1048px;
@@ -306,5 +385,9 @@ header {
             line-height: 28px;
             width: 450px;
         }
+    }
+
+    .first-explanation-areq {
+    
     }
 }
