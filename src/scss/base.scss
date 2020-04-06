@@ -33,7 +33,7 @@ body {
     margin: 0;
     font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
     font-size: $font-text-1;
-    font-weight: 600;
+    font-weight: 300;
     color: #484848;
 }
 
@@ -263,23 +263,27 @@ header {
     background-color: #666666;
     /*下線の色*/
 }
+#separate-line {
+    margin-bottom: 80px;
+    position: relative;
+}
 
 .first-explanation-are {
-    margin-top: 30px;
     @include putPrefix(display, flex);
     @include putPrefix(flex-wrap, wrap);
-    width: 620px;
-    margin: 0 auto;
+    width: 536px;
+    margin: 100px auto;
     >#first-explanation-header {
         display: block;
         width: 100%;
         font-weight: 600;
         font-size: 2.4rem;
         text-align: center;
+        margin-bottom: 60px;
     }
     .hosting-explanation-contents {
         width: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         .check-icon-area {
             height: 50px;
             .check-icon{
@@ -293,8 +297,8 @@ header {
                 position:absolute;
             }
             .check-icon:before{
-                width:36px;
-                height:36px;
+                width:43px;
+                height:43px;
                 border-radius:50px;
                 background:#ffffff;
                 border:1px solid $text-color;
@@ -307,22 +311,80 @@ header {
                 height:5px;
                 -webkit-transform:rotate(-45deg);
                 transform:rotate(-45deg);
-                left:13px;
-                top:14px;
+                left:16px;
+                top:18px;
             }
        }
     }
     h3 {
         font-size: 1.5rem;
         font-weight: 600;
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 30px;
     }
     p {
-        font-size:0.9rem;
+        font-size:1rem;
         font-weight: 200;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+    a {
+        color: $header-con-color;
+        text-decoration: none;
     }
 }
+
+#host-comment-area-1 {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 648px;
+    margin: 0 auto;
+    
+}
+.host-comment {
+    width: 270px;
+    margin-right: 30px;
+    .host-comment-text-1 {
+        font-size: 1.2rem;
+        line-height: 26px;
+        margin-top: 40px;
+    }
+    .host-comment-text-2 {
+        font-size: .9rem;
+        line-height: 18px;
+        margin-top: 20px;
+    }
+    button {
+        margin-top: 20px;
+        width: 224px;
+    }
+}
+.host-img-area {
+    width: 324px;
+    img {
+        width: 324px;
+        height: 324px;
+        object-fit: cover;
+    }
+}
+
+.blockquote:before {
+    content: "“";
+    display: inline-block;
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 6rem;
+    line-height: 1;
+    color: #FDB32B;
+}
+
+.blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    position: relative;
+}
+
 
 
 
@@ -351,13 +413,14 @@ header {
         #top-header-area {
             #top-header-img {
                 display: block;;
-                width: 1600px;
+                width: 100%;
                 margin: 0 auto;
+                object-fit: cover;
             }
             #top-header-form {
-                top: 15%;
-                right: 13%;
-                width: 20%;
+                top: 18%;
+                right: 8%;
+                width: 27%;
             }
         }
     }
@@ -387,7 +450,60 @@ header {
         }
     }
 
-    .first-explanation-areq {
-    
+    .first-explanation-are {
+        width: 100%;
+        justify-content: center;
+        .hosting-explanation-contents {
+            width: 300px;
+            margin-right: 50px;
+            
+        }
+        .hosting-explanation-contents:last-child {
+            margin-right: 0;
+        }
+    }
+
+    #host-comment-area-1 {
+        width: 1080px;
+    }
+    .host-comment {
+        width: 433px;
+        .host-comment-text-1 {
+            line-height: 40px;
+            font-size: 2rem;
+            margin-top: 70px;
+        }
+        .host-comment-text-2 {
+            line-height: 22px;
+            font-size: 1rem;
+        }
+    }
+    .host-img-area {
+        width: 516px;
+        img {
+            width: 516px;
+            height: 516px;
+        }
+    }
+    .blockquote:before {
+        font-size: 9rem;
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .main-wrapper {
+        width: 1600px;
+        margin: 0 auto;
+        #top-header-area {
+            #top-header-img {
+                width: 1600px;
+                margin: 0 auto;
+            }
+            #top-header-form {
+                top: 18%;
+                right: 10%;
+                width: 23%;
+            }
+        }
     }
 }
