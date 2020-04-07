@@ -354,10 +354,17 @@ header {
         font-size: .9rem;
         line-height: 18px;
         margin-top: 20px;
+        font-weight: 150;
     }
     button {
         margin-top: 20px;
         width: 224px;
+        background-color: white;
+        border: solid 2px $text-color;
+        font-size: 1rem;
+        padding: 10px 20px;
+        font-weight: 400;
+        border-radius: 5px;
     }
 }
 .host-img-area {
@@ -399,12 +406,20 @@ header {
     .sub-header-area {
         width: calc(100% -40px);
     }
+    
 }
 //画面横768px-1024px
 @media screen and (min-width:768px) and (max-width:1023px) {
     .sub-header-area {
         margin: 50px auto;
         width: 664px;
+    }
+    .first-explanation-are {
+        width: 100%;
+        #first-explanation-header {
+            width: 100%;
+            text-align: left;
+        }
     }
 }
 //画面横1024px-
@@ -476,6 +491,10 @@ header {
         .host-comment-text-2 {
             line-height: 22px;
             font-size: 1rem;
+        }
+        button {
+            font-size: 1rem;
+            font-weight: 600;
         }
     }
     .host-img-area {
