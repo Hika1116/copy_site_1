@@ -245,7 +245,7 @@ header {
     }
 }
 
-#separate-line:before {
+.separate-line:before {
     content: '';
     position: absolute;
     left: 50%;
@@ -263,7 +263,7 @@ header {
     background-color: #666666;
     /*下線の色*/
 }
-#separate-line {
+.separate-line {
     margin-bottom: 80px;
     position: relative;
 }
@@ -336,13 +336,14 @@ header {
 
 #host-comment-area-1 {
     margin-top: 100px;
-    display: flex;
-    justify-content: center;
+    @include putPrefix(display, flex);
+    @include putPrefix(justify-content, center);
+    @include putPrefix(flex-wrap, wrap);
     width: 648px;
     margin: 0 auto;
-    
+    margin-top: 100px; 
 }
-.host-comment {
+.host-comment-area {
     width: 270px;
     margin-right: 30px;
     .host-comment-text-1 {
@@ -402,24 +403,43 @@ header {
 
 
 //画面横400px-
-@media screen and (min-width:400px) {
-    .sub-header-area {
-        width: calc(100% -40px);
+@media screen and (min-width:400px)and (max-width:768px) {
+    .main-wrapper {
+        width: 100%;
     }
-    
+    .sub-header-area {
+        width: calc(100% -10px);
+    }
+
+    .first-explanation-are {
+        width: calc(100% -10px);
+        margin: 50px 0;
+        #first-explanation-header {
+            text-align: left;
+        }
+    }
+    .host-comment-area-1 {
+        width: 100%;
+    }
+    .host-comment-area {
+        width: 100%;
+        order: 2;
+    }
+    .host-img-area {
+        display: block;
+        width: 100%;
+        order: 1;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 //画面横768px-1024px
 @media screen and (min-width:768px) and (max-width:1023px) {
     .sub-header-area {
         margin: 50px auto;
         width: 664px;
-    }
-    .first-explanation-are {
-        width: 100%;
-        #first-explanation-header {
-            width: 100%;
-            text-align: left;
-        }
     }
 }
 //画面横1024px-
@@ -469,9 +489,8 @@ header {
         width: 100%;
         justify-content: center;
         .hosting-explanation-contents {
-            width: 300px;
+            width: 280px;
             margin-right: 50px;
-            
         }
         .hosting-explanation-contents:last-child {
             margin-right: 0;
@@ -481,7 +500,7 @@ header {
     #host-comment-area-1 {
         width: 1080px;
     }
-    .host-comment {
+    .host-comment-area {
         width: 433px;
         .host-comment-text-1 {
             line-height: 40px;
