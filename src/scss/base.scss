@@ -426,6 +426,34 @@ header {
         .chek-context {
             @include putPrefix(display, flex);
             margin-top: 20px;
+
+            .check-mark {
+                width: 10%;
+
+                .check-mark-icon {
+                    padding-left: 24px;
+                    position: relative;
+                }
+
+                .check-mark-icon:before,
+                .check-mark-icon:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                }
+
+                .check-mark-icon:after {
+                    border-left: 1px solid $header-con-color;
+                    border-bottom: 1px solid $header-con-color;
+                    width: 15px;
+                    height: 8px;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    left: 16px;
+                }
+            }
+
+
             span {
                 width: 5%;
             }
@@ -668,16 +696,46 @@ header {
             margin: 5px 0;
             color: $text-color;
         }
+         a:hover {
+             text-decoration: underline;
+         }
     }
 }
+
 .license-area {
-    width: calc(100% 40px);
+    width: calc(100% - 40px);
     margin: 0 20px;
+    margin-top: 30px;
+    @include putPrefix(display, flex);
+    @include putPrefix(flex-wrap, wrap);
     img {
         width: 17px;
     }
+    .authorization {
+        @include putPrefix(display, flex);
+        @include putPrefix(flex-wrap, wrap);
+        width: calc(100% - 17px);
+        @include putPrefix(display, flex);
+        a {
+            margin-left: 20px;
+            color: $text-color;
+            text-decoration: none
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .sns-area {
+            margin-left: auto;
+            i {
+                margin: 0 8px;
+            }
+        }
+    }
+    .license {
+        display: none;
+    }
 }
-// footer
+
 
 
 
@@ -810,6 +868,14 @@ header {
 
     .footer-menu-area{
         display: none;
+    }
+
+    .license-area {
+        .authorization {
+            .sns-area {
+                display: none;
+            }
+        }
     }
 }
 
@@ -1019,6 +1085,23 @@ header {
         width: 1048px;
         margin: 0 auto;
         margin-top: 100px;
+    }
+
+    .license-area {
+        width: 1080px;
+        margin: 20px auto;
+        margin-bottom: 50px;
+        .license {
+            display: block;
+            margin-left: 20px;
+            a {
+                margin: 0;
+            }
+            span {
+                display: inline;
+                text-align: center;
+            }
+        }
     }
 }
 
