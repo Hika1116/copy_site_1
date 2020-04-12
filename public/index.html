@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="width-header">
         <div id="header-icon-area">
             <img id="header-icon" src="./img/airbnb-1.svg" alt="header_icon">
         </div>
@@ -26,18 +26,47 @@
         </ul>
         <div id="side-header-area">
             <p>予想月収<span>?</span></p>
-            <p id="header-kingaku">¥152,693</p>
+            <p class="header-kingaku">¥152,693</p>
             <button>はじめる</button>
         </div>
     </header>
 
-    <div class="main-wrapper">
+    <dic class="middle-header">
+        <div class="middle-header-icon-area">
+            <img id="icon-event" src="./img/airbnb-1.svg" alt="header_icon">
+        </div>
+        <div class="middle-menu-fixed-area opacity-false-area">
+            <ul>
+                <li><a href="#">概要</a></li>
+                <li><a href="#">準備</a></li>
+                <li><a href="#">安全</a></li>
+                <li><a href="#">マネープラン</a></li>
+            </ul>
+        </div>
 
+        <div class="middle-sub-header-area">
+            <p>予想月収<span>?</span></p>
+            <p class="header-kingaku">¥152,693</p>
+            <button id="start-button">はじめる</button>
+        </div>
+    </dic>
+
+    <div class="over-menu-area">
+        <ul>
+            <li><a href="#">概要</a></li>
+            <li><a href="#">準備</a></li>
+            <li><a href="#">安全</a></li>
+            <li><a href="#">マネープラン</a></li>
+        </ul>
+    </div>
+
+    <div class="main-wrapper">
         <!-- トップヘッダー部 -->
         <div id="top-header-area">
             <img id="top-header-img" src="img/header_img.jpg" alt="header_img">
+            <p class="form-header-middle">Airbnbホストになって、暮らしをレベルアップ</p>
             <form id="top-header-form" action="#">
-                <p>Airbnbホストになって、暮らしをレベルアップ</p>
+                <p class="form-header">Airbnbホストになって、暮らしをレベルアップ</p>
                 <span>どれくらいの収入が見込めるかチェック</span>
                 <input class="input-form" type="text" value="東京">
                 <select class="drop-down input-form" name="rent-type" id="rent-type">
